@@ -34,6 +34,11 @@ function createWindow() {
     console.log('fuck six');
     contents.executeJavaScript('onF6()');
   });
+
+  globalShortcut.register('F7', () => {
+    console.log('fuck sexen');
+    contents.executeJavaScript('onF7()');
+  });
 }
 
 // This method will be called when Electron has finished

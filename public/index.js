@@ -1,9 +1,11 @@
 const airhorn = document.getElementById('airhorn');
+const ohSimSang = document.getElementById('oh-sim-sang');
 const volumeSlider = document.getElementById('volume');
 
 function init() {
   const defaultVolume = localStorage.getItem('volume') || 0.2
   airhorn.volume = defaultVolume;
+  ohSimSang.volume = volume;
   volumeSlider.value = defaultVolume;
 }
 
@@ -11,6 +13,7 @@ volumeSlider.oninput = function () {
   const volume = this.value;
 
   airhorn.volume = volume;
+  ohSimSang.volume = volume;
   localStorage.setItem('volume', volume);
 };
 
@@ -22,6 +25,15 @@ function onF6() {
   }
 
   airhorn.play();
+}
+
+function onF7() {
+  if (!ohSimSang.paused) {
+    ohSimSang.pause();
+    ohSimSang.currentTime = 0;
+  }
+
+  ohSimSang.play();
 }
 
 init();
