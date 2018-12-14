@@ -31,6 +31,7 @@ function onF7() {
   if (!ohSimSang.paused) {
     ohSimSang.pause();
     ohSimSang.currentTime = 0;
+    return;
   }
 
   ohSimSang.play();
